@@ -3,19 +3,19 @@
 
 Language | Compiler/Interpreter | Version   | Runtime
 ---------|----------------------|-----------|--------
-C        | gcc                  | 9.3.0     | 0m1.458s
-OCaml    | ocamlopt             | 4.10.0    | 0m3.458s
-gawk     | gawk                 | 5.1.0     | 0m3.525s
-Python   | python3              | 3.8.5     | 0m5.008s
-Ruby     | ruby                 | 2.6.6p146 | 0m6.297s
-OCaml    | ocaml                | 4.10.0    | 0m8.790s
-nim      | nim                  | 1.2.6     | 0m25.176s
-Haskell  | ghc                  | 8.8.4     | 0m27.684s
-Scala    | scalac               | 2.13.3    | 0m27.962s
-Scala    | scala                | 2.13.3    | 0m29.589s
-bash     | bash                 | 4.4.23    | 1m17.363s
-guile    | guile                | 2.2.7     | 1m41.652s
-Haskell  | runhaskell           | 8.8.4     | 2m57.777s
+C        | gcc                  | 9.3.0     | 1.458s
+OCaml    | ocamlopt             | 4.10.0    | 3.458s
+gawk     | gawk                 | 5.1.0     | 3.525s
+Python   | python3              | 3.8.5     | 5.008s
+Ruby     | ruby                 | 2.6.6p146 | 6.297s
+OCaml    | ocaml                | 4.10.0    | 8.790s
+nim      | nim                  | 1.2.6     | 25.176s
+Haskell  | ghc                  | 8.8.4     | 27.684s
+Scala    | scalac               | 2.13.3    | 27.962s
+Scala    | scala                | 2.13.3    | 29.589s
+bash     | bash                 | 4.4.23    | 77.363s
+guile    | guile                | 2.2.7     | 101.652s
+Haskell  | runhaskell           | 8.8.4     | 177.777s
 
 # gcc
 
