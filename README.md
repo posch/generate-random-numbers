@@ -21,7 +21,7 @@ nim      | nim                  | 1.2.6     | 25.176s
 Haskell  | ghc                  | 8.8.4     | 27.684s
 Scala    | scalac               | 2.13.3    | 27.962s
 Scala    | scala                | 2.13.3    | 29.589s
-bash     | bash                 | 4.4.23    | 77.363s
+bash     | bash                 | 4.4.23    | 55.462s
 guile    | guile                | 2.2.7     | 101.652s
 Haskell  | runhaskell           | 8.8.4     | 177.777s
 
@@ -178,9 +178,9 @@ Scala compiler version 2.13.3 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, I
 ```
 $ time ./gen.sh 6000000 >data-bash
 
-real    1m17.363s
-user    1m8.158s
-sys     0m9.120s
+real    0m55.462s
+user    0m46.309s
+sys     0m9.054s
 
 $ bash --version
 GNU bash, version 4.4.23(1)-release (x86_64-unknown-linux-gnu)
