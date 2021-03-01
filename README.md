@@ -25,6 +25,9 @@ bash     | bash                 | 4.4.23    | 55.462s
 guile    | guile                | 2.2.7     | 101.652s
 Haskell  | runhaskell           | 8.8.4     | 177.777s
 
+
+![Runtimes](https://raw.githubusercontent.com/posch/generate-random-numbers/main/runtime.svg)
+
 # gcc
 
 ```
