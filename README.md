@@ -1,6 +1,13 @@
 
 # How long does it take to create a file with 6M random numbers?
 
+A performance comparison of ad-hoc programs in several languages that
+generate floating point random numbers.
+
+C, OCaml, gawk, Fortran are fast. Python and Ruby are fast, too. nim,
+Haskell, Scala, and guile are surprisingly slow.
+
+
 Language | Compiler/Interpreter | Version   | Runtime
 ---------|----------------------|-----------|--------
 C        | gcc                  | 9.3.0     | 1.458s
