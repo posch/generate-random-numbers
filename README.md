@@ -6,6 +6,7 @@ Language | Compiler/Interpreter | Version   | Runtime
 C        | gcc                  | 9.3.0     | 1.458s
 OCaml    | ocamlopt             | 4.10.0    | 3.458s
 gawk     | gawk                 | 5.1.0     | 3.525s
+Fortran  | gfortran             | 9.3.0     | 3.705s
 Python   | python3              | 3.8.5     | 5.008s
 Ruby     | ruby                 | 2.6.6p146 | 6.297s
 OCaml    | ocaml                | 4.10.0    | 8.790s
@@ -194,3 +195,17 @@ Copyright (C) 2020 Free Software Foundation, Inc.
 ```
 
 
+# gfortran
+
+```
+$ gfortran -o gen gen.f90
+
+$ time ./gen 6000000 >data-gfortran
+
+real    0m3.705s
+user    0m3.658s
+sys     0m0.043s
+
+$ gfortran --version
+GNU Fortran (GCC) 9.3.0
+```
