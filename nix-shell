@@ -1,0 +1,20 @@
+#!/bin/sh
+
+nix-shell -p \
+	  'haskellPackages.ghcWithPackages (pkgs: [pkgs.random])' \
+	  gfortran \
+	  gprolog \
+	  guile \
+	  lua \
+	  nim \
+	  nodejs \
+	  ocaml \
+	  perl \
+	  ruby \
+	  rustc cargo \
+	  sbcl \
+	  scala \
+	  tcl
+
+
+
