@@ -312,3 +312,15 @@ sys     0m12.803s
 $ zig version
 0.7.1
 ```
+
+## swipl
+```
+$ time swipl -O gen.swi.prolog -- 6000000 >data-swipl
+
+real    0m21.195s
+user    0m13.395s
+sys     0m7.764s
+
+$ swipl --version
+SWI-Prolog version 8.3.9 for x86_64-linux
+```
