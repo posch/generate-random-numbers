@@ -14,7 +14,9 @@ nix-shell -p \
 	  rustc cargo \
 	  sbcl \
 	  scala \
-	  tcl
+	  tcl \
+	  zig
+
 
 
 

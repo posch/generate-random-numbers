@@ -299,3 +299,16 @@ sys     0m7.492s
 ```
 
 
+## zig
+
+```
+$ zig build-exe -O ReleaseSafe -target native gen.zig
+$ time ./gen 6000000 >data-zig 
+
+real    0m19.227s
+user    0m6.319s
+sys     0m12.803s
+
+$ zig version
+0.7.1
+```
