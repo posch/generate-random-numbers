@@ -324,3 +324,15 @@ sys     0m7.764s
 $ swipl --version
 SWI-Prolog version 8.3.9 for x86_64-linux
 ```
+
+## sbcl
+```
+$ time sbcl --script gen.lisp 6000000 >data-sbcl
+
+real    0m27.848s
+user    0m21.027s
+sys     0m6.791s
+
+$ sbcl --version
+SBCL 2.0.8.nixos
+```
