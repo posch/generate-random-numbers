@@ -14,6 +14,7 @@ nix-shell -p \
 	  rustc cargo \
 	  sbcl \
 	  scala \
+	  swiProlog \
 	  tcl \
 	  zig
 

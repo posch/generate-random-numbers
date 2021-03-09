@@ -7,12 +7,12 @@ pub fn main() !void {
         break :blk seed;
     });
     const rand = &prng.random;
-    const stdout = std.io.getStdOut().writer();
+    const stdout = std.io.getStdOut().outStream();
 
-    var general_purpose_allocator = std.heap.GeneralPurposeAllocator(.{}){};
-    const gpa = &general_purpose_allocator.allocator;
-    const args = try std.process.argsAlloc(gpa);
-    defer std.process.argsFree(gpa, args);
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    const allocator = &arena.allocator;
+    const args = try std.process.argsAlloc(allocator);
+    defer std.process.argsFree(allocator, args);
 
     const n: u32 = try std.fmt.parseUnsigned(u32, args[1], 10);
     var i: u32 = 0;

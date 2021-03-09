@@ -3,28 +3,31 @@
 A performance comparison of ad-hoc programs in several languages that
 generate floating point random numbers.
 
-Language   | Compiler/Interpreter | Version   | Runtime
------------|----------------------|-----------|--------
-C          | gcc                  | 9.3.0     | 1.458s
-Perl       | perl                 | 5.32.0    | 3.176s
-OCaml      | ocamlopt             | 4.10.0    | 3.458s
-gawk       | gawk                 | 5.1.0     | 3.525s
-Fortran    | gfortran             | 9.3.0     | 3.705s
-GNU-Prolog | gplc                 | 1.4.5     | 3.917s
-Python     | python3              | 3.8.5     | 5.008s
-Ruby       | ruby                 | 2.6.6p146 | 6.297s
-OCaml      | ocaml                | 4.10.0    | 8.790s
-Rust       | rustc                | 1.45.2    | 9.521s
-lua        | lua                  | 5.2.4     | 12.940s
-tcl        | tclsh                | 8.6       | 23.299s
-JavaScript | node                 | 12.21.0   | 23.639s
-nim        | nim                  | 1.2.6     | 25.176s
-Haskell    | ghc                  | 8.8.4     | 27.684s
-Scala      | scalac               | 2.13.3    | 27.962s
-Scala      | scala                | 2.13.3    | 29.589s
-bash       | bash                 | 4.4.23    | 55.462s
-guile      | guile                | 2.2.7     | 101.652s
-Haskell    | runhaskell           | 8.8.4     | 177.777s
+Language    | Compiler/Interpreter | Version   | Runtime
+------------|----------------------|-----------|--------
+C           | gcc                  | 9.3.0     | 1.458s
+Perl        | perl                 | 5.32.0    | 3.176s
+OCaml       | ocamlopt             | 4.10.0    | 3.458s
+gawk        | gawk                 | 5.1.0     | 3.525s
+Fortran     | gfortran             | 9.3.0     | 3.705s
+GNU-Prolog  | gplc                 | 1.4.5     | 3.917s
+Python      | python3              | 3.8.5     | 5.008s
+Ruby        | ruby                 | 2.6.6p146 | 6.297s
+OCaml       | ocaml                | 4.10.0    | 8.790s
+Rust        | rustc                | 1.45.2    | 9.521s
+lua         | lua                  | 5.2.4     | 12.940s
+SWI-Prolog  | swipl                | 8.1.15    | 17.334s
+tcl         | tclsh                | 8.6       | 23.299s
+JavaScript  | node                 | 12.21.0   | 23.639s
+Common-Lisp | sbcl                 | 2.0.0     | 24.708s
+nim         | nim                  | 1.2.6     | 25.176s
+Haskell     | ghc                  | 8.8.4     | 27.684s
+Scala       | scalac               | 2.13.3    | 27.962s
+Scala       | scala                | 2.13.3    | 29.589s
+zig         | zig                  | 0.6.0     | 34.845s
+bash        | bash                 | 4.4.23    | 55.462s
+guile       | guile                | 2.2.7     | 101.652s
+Haskell     | runhaskell           | 8.8.4     | 177.777s
 
 ![Runtimes](https://raw.githubusercontent.com/posch/generate-random-numbers/main/runtime.svg)
 
@@ -221,7 +224,7 @@ $ python3 --version
 Python 3.8.5
 ```
 
-## Ruby
+## ruby
 
 ```
 $ time ./gen.rb 6000000 >data-ruby
@@ -261,6 +264,18 @@ $ rustc --version
 rustc 1.45.2
 ```
 
+## sbcl
+```
+$ time sbcl --script gen.lisp 6000000 >data-sbcl
+
+real    0m24.708s
+user    0m17.965s
+sys     0m6.578s
+
+$ sbcl --version
+SBCL 2.0.0.nixos
+```
+
 ## scala
 
 ```
@@ -288,6 +303,20 @@ $ scalac --version
 Scala compiler version 2.13.3 -- Copyright 2002-2020, LAMP/EPFL and Lightbend, Inc.
 ```
 
+## swipl
+```
+$ time swipl -O gen.swi.prolog -- 6000000 >data-swipl
+
+real    0m17.334s
+user    0m10.432s
+sys     0m6.896s
+
+
+$ swipl --version
+SWI-Prolog version 8.1.15 for x86_64-linux
+
+```
+
 ## tcl
 
 ```
@@ -302,37 +331,14 @@ sys     0m7.492s
 ## zig
 
 ```
-$ zig build-exe -O ReleaseSafe -target native gen.zig
-$ time ./gen 6000000 >data-zig 
+$ zig build-exe gen.zig --release-safe -target native
+$ time ./gen 6000000 >data-zig
 
-real    0m19.227s
-user    0m6.319s
-sys     0m12.803s
+real    0m34.845s
+user    0m7.488s
+sys     0m27.354s
 
 $ zig version
-0.7.1
+0.6.0
 ```
 
-## swipl
-```
-$ time swipl -O gen.swi.prolog -- 6000000 >data-swipl
-
-real    0m21.195s
-user    0m13.395s
-sys     0m7.764s
-
-$ swipl --version
-SWI-Prolog version 8.3.9 for x86_64-linux
-```
-
-## sbcl
-```
-$ time sbcl --script gen.lisp 6000000 >data-sbcl
-
-real    0m27.848s
-user    0m21.027s
-sys     0m6.791s
-
-$ sbcl --version
-SBCL 2.0.8.nixos
-```
