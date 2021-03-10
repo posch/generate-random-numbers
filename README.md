@@ -6,6 +6,7 @@ generate floating point random numbers.
 Language    | Compiler/Interpreter | Version   | Runtime
 ------------|----------------------|-----------|--------
 C           | gcc                  | 9.3.0     | 1.458s
+J           | jconsole             | 901       | 1.584s
 Perl        | perl                 | 5.32.0    | 3.176s
 OCaml       | ocamlopt             | 4.10.0    | 3.458s
 gawk        | gawk                 | 5.1.0     | 3.525s
@@ -132,6 +133,19 @@ sys     0m1.829s
 $ guile --version
 guile (GNU Guile) 2.2.7
 Copyright (C) 2020 Free Software Foundation, Inc.
+```
+
+## jconsole
+```
+$ time ./gen.ijs 6000000 >data-j
+
+real    0m1.584s
+user    0m1.342s
+sys     0m0.127s
+
+$ jconsole 
+   9!:14 ''
+j901/j64/linux/beta/GPL3/unknown/1980-01-01T00:00:00
 ```
 
 ## lua
