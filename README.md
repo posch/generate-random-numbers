@@ -20,6 +20,7 @@ lua         | lua                  | 5.2.4     | 12.940s
 SWI-Prolog  | swipl                | 8.1.15    | 17.334s
 tcl         | tclsh                | 8.6       | 23.299s
 JavaScript  | node                 | 12.21.0   | 23.639s
+Octave      | octave               | 5.2.0     | 23.707s
 Common-Lisp | sbcl                 | 2.0.0     | 24.708s
 nim         | nim                  | 1.2.6     | 25.176s
 Haskell     | ghc                  | 8.8.4     | 27.684s
@@ -209,6 +210,18 @@ $ time ./a.out 6000000 >data-ocamlopt
 real    0m3.458s
 user    0m3.322s
 sys     0m0.039s
+```
+
+## octave
+```
+$ time ./gen.octave 6000000 >data-octave
+
+real    0m23.707s
+user    0m10.337s
+sys     0m13.274s
+
+$ octave --version
+GNU Octave, version 5.2.0
 ```
 
 ## perl

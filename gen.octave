@@ -1,0 +1,3 @@
+#!/usr/bin/env octave
+n = str2num(argv(){1});
+printf("%.6f\n", rand(n,1))

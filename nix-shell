@@ -5,10 +5,12 @@ nix-shell -p \
 	  gfortran \
 	  gprolog \
 	  guile \
+	  j \
 	  lua \
 	  nim \
 	  nodejs \
 	  ocaml \
+	  octave \
 	  perl \
 	  ruby \
 	  rustc cargo \
